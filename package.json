@@ -1,0 +1,32 @@
+{
+  "name": "maplibre-gl-style-flipper",
+  "version": "1.0.1",
+  "description": "A custom control to switch between different map styles in MapLibre GL JS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geoglify/maplibre-gl-style-flipper.git"
+  },
+  "keywords": [
+    "maplibre",
+    "mapbox",
+    "style-switcher",
+    "map",
+    "flipper",
+    "style-flipper"
+  ],
+  "author": "Leonel Dias <https://leoneljdias.github.io>",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/geoglify/maplibre-gl-style-flipper/issues"
+  },
+  "homepage": "https://github.com/geoglify/maplibre-gl-style-flipper#readme",
+  "dependencies": {
+    "maplibre-gl": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "rollup": "^3.0.0"
+  }
+}
