@@ -147,7 +147,7 @@ new StyleFlipperControl(styles, onStyleChange);
 ### CSS Styling
 
 You can customize the appearance of the control by overriding the default CSS. Here’s an example:
-
+```HTML
 <style>
 .style-flipper-control {
     background: rgba(255, 255, 255, 0.8);
@@ -165,7 +165,7 @@ You can customize the appearance of the control by overriding the default CSS. H
     border: 2px solid #ff6b6b;
 }
 </style>
-
+```
 ---
 
 ## Contributing
