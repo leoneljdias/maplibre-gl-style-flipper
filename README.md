@@ -95,6 +95,12 @@ Here’s how to use the `StyleFlipperControl` in a simple HTML file:
 
         // Add the control to the map
         map.addControl(styleFlipperControl, "bottom-left");
+
+        // Save custom sources and layers before changing the style
+        styleFlipperControl.saveCustomSourcesAndLayers();
+
+        // Restore custom sources and layers after changing the style
+        styleFlipperControl.restoreCustomSourcesAndLayers();
     </script>
 </body>
 </html>
@@ -141,6 +147,12 @@ new StyleFlipperControl(styles, onStyleChange);
 - **`setCurrentStyleCode(code)`**:
   - Sets the current style code and highlights the corresponding button.
   - **`code`**: The code of the style to set as active.
+
+- **`saveCustomSourcesAndLayers()`**:
+  - Saves the current custom sources and layers.
+
+- **`restoreCustomSourcesAndLayers()`**:
+  - Restores the saved custom sources and layers.
 
 ---
 

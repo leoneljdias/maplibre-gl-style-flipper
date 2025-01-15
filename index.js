@@ -14,6 +14,7 @@ export class StyleFlipperControl {
     this.onStyleChange = onStyleChange;
     this.buttons = {}; // Stores buttons for easy access
     this.currentStyleCode = null; // Stores the current map style code
+    this.customSourcesAndLayers = {}; // Stores custom sources and layers
   }
 
   /**
@@ -45,9 +46,13 @@ export class StyleFlipperControl {
 
       // Add a click event listener
       button.addEventListener("click", () => {
+        this.saveCustomSourcesAndLayers(); // Save custom sources and layers
         this.map.setStyle(styleData.url); // Use the style URL from the style data
         this.currentStyleCode = styleData.code; // Update the current style code
         this.highlightActiveStyle(styleClass); // Highlight the active style
+        this.map.once('styledata', () => {
+          this.restoreCustomSourcesAndLayers(); // Restore custom sources and layers
+        });
         if (this.onStyleChange) {
           this.onStyleChange(styleClass, styleData.code);
         }
@@ -115,6 +120,47 @@ export class StyleFlipperControl {
   setCurrentStyleCode(code) {
     this.currentStyleCode = code;
     this.highlightActiveStyle(this.getCurrentStyleClass());
+  }
+
+  /**
+   * Saves the current custom sources and layers.
+   */
+  saveCustomSourcesAndLayers() {
+    this.customSourcesAndLayers = {
+      sources: {},
+      layers: []
+    };
+
+    // Save custom sources
+    const sources = this.map.getStyle().sources;
+    for (const [sourceId, source] of Object.entries(sources)) {
+      if (!source.url) { // Assuming custom sources do not have a URL
+        this.customSourcesAndLayers.sources[sourceId] = source;
+      }
+    }
+
+    // Save custom layers
+    const layers = this.map.getStyle().layers;
+    for (const layer of layers) {
+      if (this.customSourcesAndLayers.sources[layer.source]) {
+        this.customSourcesAndLayers.layers.push(layer);
+      }
+    }
+  }
+
+  /**
+   * Restores the saved custom sources and layers.
+   */
+  restoreCustomSourcesAndLayers() {
+    // Restore custom sources
+    for (const [sourceId, source] of Object.entries(this.customSourcesAndLayers.sources)) {
+      this.map.addSource(sourceId, source);
+    }
+
+    // Restore custom layers
+    for (const layer of this.customSourcesAndLayers.layers) {
+      this.map.addLayer(layer);
+    }
   }
 }
 
