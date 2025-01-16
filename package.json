@@ -1,6 +1,6 @@
 {
   "name": "maplibre-gl-style-flipper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A custom control to switch between different map styles in MapLibre GL JS",
   "main": "index.js",
   "repository": {
