@@ -55,7 +55,7 @@ Here’s how to use the `StyleFlipperControl` in a simple HTML file:
 <body>
     <div id="map"></div>
     <script type="module">
-        import { StyleFlipperControl } from 'https://unpkg.com/maplibre-gl-style-flipper@1.0.1/index.js';
+        import { StyleFlipperControl } from "maplibre-gl-style-flipper";
 
         // Define map styles
         const mapStyles = {
@@ -95,12 +95,6 @@ Here’s how to use the `StyleFlipperControl` in a simple HTML file:
 
         // Add the control to the map
         map.addControl(styleFlipperControl, "bottom-left");
-
-        // Save custom sources and layers before changing the style
-        styleFlipperControl.saveCustomSourcesAndLayers();
-
-        // Restore custom sources and layers after changing the style
-        styleFlipperControl.restoreCustomSourcesAndLayers();
     </script>
 </body>
 </html>
@@ -109,15 +103,18 @@ Here’s how to use the `StyleFlipperControl` in a simple HTML file:
 ### Explanation
 
 1. **Map Styles**:
+
    - The `mapStyles` object contains the styles you want to switch between. Each style has:
      - `code`: A unique identifier for the style.
      - `url`: The URL of the MapLibre GL style.
      - `image`: The path to an image that represents the style (used in the control buttons).
 
 2. **Map Initialization**:
+
    - The map is initialized with a default style (`carto-positron` in this case).
 
 3. **Style Flipper Control**:
+
    - The `StyleFlipperControl` is created with the `mapStyles` object and an optional callback function that triggers when the style changes.
    - The control is added to the map using `map.addControl()`.
 
@@ -145,10 +142,12 @@ new StyleFlipperControl(styles, onStyleChange);
 #### Methods
 
 - **`setCurrentStyleCode(code)`**:
+
   - Sets the current style code and highlights the corresponding button.
   - **`code`**: The code of the style to set as active.
 
 - **`saveCustomSourcesAndLayers()`**:
+
   - Saves the current custom sources and layers.
 
 - **`restoreCustomSourcesAndLayers()`**:
@@ -161,6 +160,7 @@ new StyleFlipperControl(styles, onStyleChange);
 ### CSS Styling
 
 You can customize the appearance of the control by overriding the default CSS. Here’s an example:
+
 ```HTML
 <style>
 .style-flipper-control {
@@ -180,6 +180,7 @@ You can customize the appearance of the control by overriding the default CSS. H
 }
 </style>
 ```
+
 ---
 
 ## Contributing
