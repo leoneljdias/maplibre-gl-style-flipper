@@ -55,7 +55,7 @@ Here’s how to use the `StyleFlipperControl` in a simple HTML file:
 <body>
     <div id="map"></div>
     <script type="module">
-        import { StyleFlipperControl } from "maplibre-gl-style-flipper";
+        import StyleFlipperControl from "maplibre-gl-style-flipper";
 
         // Define map styles
         const mapStyles = {
