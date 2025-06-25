@@ -89,6 +89,7 @@ class StyleFlipperControl {
     this.customSourcesAndLayers = {
       sources: {},
       layers: [],
+      image: {}
     };
     const sources = this.map.getStyle().sources;
     for (const [sourceId, source] of Object.entries(sources)) {
@@ -102,6 +103,15 @@ class StyleFlipperControl {
         this.customSourcesAndLayers.layers.push(layer);
       }
     }
+
+    const allImageIDs = this.map.listImages();
+    const customIDs = allImageIDs.filter(id => id.startsWith('customImg-'));
+    if(customIDs.length != 0 ) {
+        customIDs.forEach((Id)=>{
+            this.customSourcesAndLayers.image[Id] = this.map.getImage(Id)
+        })
+    };
+  
   }
 
   restoreCustomSourcesAndLayers() {
@@ -111,7 +121,13 @@ class StyleFlipperControl {
       this.map.addSource(sourceId, source);
     }
     for (const layer of this.customSourcesAndLayers.layers) {
-      this.map.addLayer(layer);
+        this.map.addLayer(layer);
+    }
+
+    for (const [IdImage, Image] of Object.entries(
+      this.customSourcesAndLayers.image
+    )) {
+        this.map.addImage(IdImage, Image.data);
     }
   }
 }
