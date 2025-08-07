@@ -1,4 +1,4 @@
-# MapLibre GL Style Flipper
+# MapLibre GL Style Flipper [![npm version](https://img.shields.io/npm/v/maplibre-gl-style-flipper)](https://www.npmjs.com/package/maplibre-gl-style-flipper)
 
 A custom control to switch between different map styles in MapLibre GL JS.
 
@@ -192,4 +192,5 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/geoglify/maplibre-gl-style-flipper/blob/main/LICENSE) file for details.
+
 
