@@ -1,7 +1,7 @@
 {
-  "name": "df-customized-maplibre-gl-style-flipper",
-  "version": "1.0.7",
-  "description": "A customized version of maplibre-gl-style-flipper with additional features by devfrank.",
+  "name": "maplibre-gl-style-flipper",
+  "version": "1.0.8",
+  "description": "A custom control to switch between different map styles in MapLibre GL JS",
   "main": "index.js",
   "repository": {
     "type": "git",
