@@ -1,23 +1,3 @@
-# devfrank-custom-maplibre-gl-style-flipper
-
-🔧 A customized fork of [maplibre-gl-style-flipper](https://github.com/leoneljdias/maplibre-gl-style-flipper),  
-with a fix to preserve custom images after switching styles or layers.
-
-## 🛠 What Was Fixed?
-
-In the original library, calling `map.setStyle(...)` removes all images added via `addImage()`.  
-This fork ensures that custom images are re-added after the style changes.
-
-
-When switching map styles or layers in MapLibre, all custom images added via addImage() will be removed. To ensure your custom images persist, follow these steps:
-
-1. Use a Prefix for Custom Image IDs
-Add a prefix like customImg- to all your custom image IDs to clearly distinguish them.
-For example, if your image ID is "demo", change it to "customImg-demo":
-```HTML
-map.addImage('customImg-demo', imageData);
-```
-
 # MapLibre GL Style Flipper
 
 A custom control to switch between different map styles in MapLibre GL JS.
@@ -212,3 +192,4 @@ Contributions are welcome! If you find a bug or have a feature request, please o
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/geoglify/maplibre-gl-style-flipper/blob/main/LICENSE) file for details.
+
