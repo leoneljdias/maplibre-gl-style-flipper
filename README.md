@@ -2,7 +2,7 @@
 
 A custom control to switch between different map styles in MapLibre GL JS.
 
-![DEMO](https://raw.githubusercontent.com/geoglify/maplibre-gl-style-flipper/refs/heads/main/demo.gif)
+![DEMO](/docs/demo.gif)
 
 ## Features
 
